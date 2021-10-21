@@ -5,6 +5,7 @@
 /vendor
 /resources/views/testes/*
 /codeold
+.github/
 .env
 .env.backup
 ssh_key.txt
@@ -15,3 +16,5 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+LICENSE
+README.md
