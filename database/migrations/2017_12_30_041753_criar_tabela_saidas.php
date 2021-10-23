@@ -29,6 +29,6 @@ class CriarTabelaSaidas extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('saidas');
     }
 }

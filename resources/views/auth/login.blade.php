@@ -2,10 +2,11 @@
 
 @section('conteudo')
 <div class="container">
-    <div class="row justify-content-md-center mt-5">
-        <div class="col-md-offset-2 col-md-8">
+    <div class="row justify-content-md-center mt-5 mb-4">
+        <!-- Arrumando o css diretamente na tag -->
+        <div class="col-md-offset-2 mt-4 col-md-8">
             <div class="card">
-                <div class="card-header">Login</div>
+                <div class="card-header text-center" style="padding-bottom:20px; padding-top:40px;">Login Usuário</div>
                 <div class="card-body">
                     <form class="form-horizontal" method="POST" action="{{ route('entrar') }}">
                         {{ csrf_field() }}

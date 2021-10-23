@@ -13,7 +13,7 @@ class NovoCampoProdutos extends Migration
      */
     public function up()
     {
-        Schema::table('produtos', function($table){
+        Schema::table('produtos', function(Blueprint $table){
             $table->string('codigo_produto');
             $table->string('path_image');
         });    
@@ -26,6 +26,9 @@ class NovoCampoProdutos extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('produtos', function (Blueprint $table) {
+            $table->dropColumn('codigo_produto');
+            $table->dropColumn('path_image');
+        });
     }
 }
