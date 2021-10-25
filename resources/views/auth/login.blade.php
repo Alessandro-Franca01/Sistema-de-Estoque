@@ -5,7 +5,14 @@
     <div class="row justify-content-md-center mt-5 mb-4">
         <!-- Arrumando o css diretamente na tag -->
         <div class="col-md-offset-2 mt-4 col-md-8">
+            @if ($errors->has('message'))
+                <div class="alert alert-danger alert-dismissible text-center" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>{{ $errors->first('message') }}</strong> 
+                </div>
+            @endif
             <div class="card">
+                
                 <div class="card-header text-center" style="padding-bottom:20px; padding-top:40px;">Login Usuário</div>
                 <div class="card-body">
                     <form class="form-horizontal" method="POST" action="{{ route('entrar') }}">
@@ -66,12 +73,10 @@
                         <div class="form-group row">
                             <div class="col-lg-8 offset-lg-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Entrar
+                                    Entrar no Sistema
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Esqueceu sua senha?
-                                </a>
+                                <!-- <a class="btn btn-link" href="#">Esqueceu sua senha?</a> -->
                             </div>
                         </div>
                     </form>

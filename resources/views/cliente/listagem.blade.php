@@ -19,8 +19,7 @@
         <th>CPF</th>
         <th>Celular</th>
         <th>E-Mail</th>
-        <th>Data de inclusão</th>
-        <th>Horário</th>
+        <th>Saídas</th>
         <th>Editar Cliente</th>
         <th>Remover Cliente</th>
       </tr>
@@ -33,8 +32,7 @@
           <td>{{ $c->cpf }}</td>
           <td>{{ $c->celular }}</td>
           <td>{{ $c->email }}</td>
-          <td>{{ date('d/m/Y', strtotime($c->created_at)) }}</td>
-          <td>{{ date('H:i:s', strtotime($c->created_at)) }}</td>
+          <td><a href="/Listar/Compras/{{ $c->id_clientes }}"><span class="glyphicon glyphicon-th-list"></span></a></td>
           <td><a href="/ListarCliente/mostrar/{{ $c->id_clientes }}"><span class="glyphicon glyphicon-pencil"></span></a></td>
           <td><a href="/ListarCliente/remove/{{ $c->id_clientes }}"><span class="glyphicon glyphicon-trash"></span></a></td>
         </tr>     

@@ -40,7 +40,7 @@
             <div class="col-md-4">
                 <input name="fim" id="datetime" value="{{ old('fim') }}" type="date" placeholder="Insira um valor" class="form-control input-md" required>
             </div>
-          <div onclick="inserirDataAtualRelatorio()" class="btn btn-success">INCLUIR DATA ATUAL</div>
+          <div onclick="inserirDataAtualRelatorio()" class="btn btn-success">DATA ATUAL</div>
           <div onclick="inserirUltimosSeteDias()" class="btn btn-success">ÚLTIMOS 7 DIAS</div>
           <div onclick="inserirUltimosQuinzeDias()" class="btn btn-success">ÚLTIMOS 15 DIAS</div>
         </div>

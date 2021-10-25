@@ -83,6 +83,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/ListarCliente','ClienteController@listar')->name('Listar Clientes');
 	Route::get('/ListarCliente/remove/{id_cliente}','ClienteController@remove');
 	Route::get('/ListarCliente/mostrar/{id_cliente}','ClienteController@mostra');
+	Route::get('/Listar/Compras/{id_cliente}','ClienteController@listarCompras')->name('Listar Compras');
 
 	Route::get('/CadastrarCliente','ClienteController@novo')->name('Cadastrar Cliente');
 	Route::post('/CadastrarCliente/adiciona','ClienteController@adiciona');

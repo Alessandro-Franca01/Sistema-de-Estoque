@@ -46,7 +46,7 @@ class LoginController extends Controller
         if (Auth::attempt($credentials))
             return redirect()->action('ModuloController@listar');
         else
-            return back()->withErrors(array('message' => 'email e/ou senha incorreto'));
+            return back()->withErrors(array('message' => 'Email e/ou Senha incorreto(s)'));
 
     }
 }
