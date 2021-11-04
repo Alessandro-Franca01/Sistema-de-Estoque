@@ -4,7 +4,6 @@
 <form class="form-horizontal" method="post" action="/NovoProduto/adiciona" enctype="multipart/form-data">
     <fieldset>
 
-
     <!-- Form Name -->
     <legend>Cadastro de Produto</legend>
 
@@ -38,6 +37,13 @@
         <label class="col-md-4 control-label" for="textinput">Descrição</label>  
         <div class="col-md-4">
             <input id="textinput" name="descricao" value="{{ old('descricao') }}" type="text" placeholder="Insira uma descrição" class="form-control input-md" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Tamanho</label>  
+        <div class="col-md-4">
+            <input id="textinputTamanho" name="tamanho" value="{{ old('tamanho') }}"  type="text" placeholder="Tamanho" class="form-control input-md" required>
         </div>
     </div>
 

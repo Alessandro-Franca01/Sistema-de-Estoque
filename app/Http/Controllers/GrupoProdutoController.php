@@ -13,6 +13,7 @@ class GrupoProdutoController extends Controller
     public function listar(){
         $grupoProdutos = GrupoProdutoController::queryContagemGrupoProdutos();
         $produtos = GrupoProdutoController::queryAllProducts();
+        //dd($produtos);
         return view('grupoproduto.listagem')
                ->with(['grupoProdutos' => $grupoProdutos, 
                       'produtos' => $produtos]);
@@ -87,6 +88,7 @@ class GrupoProdutoController extends Controller
             ->get();
     }
 
+    // Ajuste feito para mostrar o tamanho do produto: OK
     private function queryAllProducts(){
         return Produto
                ::leftJoin('entradas', 'produtos.id_produto', '=', 'entradas.fk_produto')
@@ -99,11 +101,13 @@ class GrupoProdutoController extends Controller
                ->select('produtos.id_produto',
                         'produtos.codigo_produto',
                         'produtos.descricao',
+                        'produtos.tamanho',
                         'produtos.valor',
                         'grupo_produtos.nome',
                         DB::raw('sum(entradas.quantidade) as quantidadeEntrada'),
                         'temp.quantidadeSaida')
                ->groupBy('produtos.descricao',
+                         'produtos.tamanho',
                          'produtos.codigo_produto',
                          'produtos.valor',
                          'produtos.id_produto',

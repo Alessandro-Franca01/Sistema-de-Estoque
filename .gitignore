@@ -1,11 +1,14 @@
 /node_modules
 /public/hot
 /public/storage
+public/images/
 /storage/*.key
 /vendor
 /resources/views/testes/*
+/resources/views/produto/lista_generica.blade.php
 /codeold
 .github/
+.vscode/
 .env
 .env.backup
 ssh_key.txt

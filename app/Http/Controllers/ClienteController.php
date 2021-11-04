@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-//use Request;
+use Request;
 use App\Cliente;
 use App\Venda;
 use App\Http\Requests\ClienteRequest;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\DB;
 
@@ -18,7 +17,7 @@ class ClienteController extends Controller
     	return view('cliente.listagem')->with(['clientes' => $clientes]);
     }
 
-    // METODO PARA LISTAR AS COMPRAS DE UM CLIENTE: Funcionando, query personalizada!
+    // METODO PARA LISTAR AS COMPRAS DE UM CLIENTE:
     public function listarCompras(int $id_cliente){
         
         $cliente = Cliente::find($id_cliente);
@@ -41,9 +40,11 @@ class ClienteController extends Controller
     	return view('cliente.formulario');
     }
 
+    // Erro aqui!
     public function adiciona(ClienteRequest $request){
 
 		Cliente::create($request->all());
+
         Request::session()->flash('message.level', 'success');
         Request::session()->flash('message.content', 'Cliente Adicionada com Sucesso!');
 		

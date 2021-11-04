@@ -18,7 +18,8 @@
         <th>Código Produto</th>
         <th>Foto</th>
         <th>Descrição</th>
-        <th>Valor</th>
+        <th>Tamanho</th>
+        <th>Custo</th>
         <th>Data</th>
         <th>Horário</th>
         <th>Quantidade</th>
@@ -32,7 +33,8 @@
           <td>{{ $p->codigo_produto }}</td>
           <td id="imagem">{!! $p->imagens ? "<img width=\"150\" src=\"$p->imagens\">" : 'Sem Foto' !!}</td>
           <td>{{ $p->descricao }}</td>
-          <td>R${{ number_format($p->valor, 2, ',', '.') }}</td>
+          <td>{{ $p->tamanho }}</td>
+          <td>R${{ number_format($p->valor_compra, 2, ',', '.') }}</td>
           <td>{{ date('d/m/Y', strtotime($p->created_at)) }}</td>
           <td>{{ date('H:i:s', strtotime($p->created_at)) }}</td>
           <td>{{ $p->quantidade }}</td>

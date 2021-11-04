@@ -14,13 +14,14 @@
 
     <div class="row">
     @foreach($grupoProdutos as $grupoProduto)
-        <div class="col-sm-6 col-md-4">
+        <div class="col-sm-6 col-md-6">
             <div class="thumbnail">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Id</th>
                             <th>Nome</th>
+                            <th>Tamanho</th>
                             <th>Entrada</th>
                             <th>Saída</th>
                             <th>Saldo</th>
@@ -36,6 +37,7 @@
                                 @if($grupoProduto->nome == $produto->nome)
                                     <td>{{ $produto->codigo_produto }}</td>
                                     <td>{{ $produto->descricao }}</td>
+                                    <td>{{ $produto->tamanho }}</td>
                                     <td>{{ $produto->quantidadeEntrada ? $produto->quantidadeEntrada : 0  }}</td>
                                     <td>{{ $produto->quantidadeSaida ? $produto->quantidadeSaida : 0 }}</td>
                                     <td>{{ $produto->quantidadeEntrada - $produto->quantidadeSaida }}</td>

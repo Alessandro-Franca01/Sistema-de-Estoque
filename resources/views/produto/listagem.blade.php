@@ -20,6 +20,7 @@
         <th>Código Produto</th>
         <th>Foto</th>
         <th>Descrição</th>
+        <th>Tamanho</th>
         <th>Categoria</th>
         <th>Valor</th>
         <th>Entrada</th>
@@ -36,14 +37,24 @@
       @foreach($produtos as $p)
         <tr>
           <td>{{ $p->codigo_produto }}</td>
+          <!-- No lugar de colocar uma String no caso de não haver foto, vou usar outra img  -->
           <td id="imagem">{!! $p->imagens ? "<img width=\"150\" src=\"$p->imagens\">" : 'Sem Foto' !!}</td>
           <td>{{ $p->descricao }}</td>
+          <!-- Arrumar isso aqui depois -->
+          @empty($p->tamanho)
+            <td> N/A </td>
+          @endempty
+
+          @empty(!$p->tamanho)
+            <td>{{ $p->tamanho }}</td>
+          @endempty
+
           <td>{{ $p->nome }}</td>
           <td>R${{ number_format($p->valor, 2, ',', '.') }}</td>
           <td>{{ $p->quantidadeEntrada ? $p->quantidadeEntrada : 0  }}</td>
           <td>{{ $p->quantidadeSaida ? $p->quantidadeSaida : 0 }}</td>
           <td>{{ $saldo = $p->quantidadeEntrada - $p->quantidadeSaida}}</td>
-          <td>{{ $saldo == 0 ? "ESGOTADO": "DISPONÍVEL"}}</td>
+          <td>{{ $saldo <= 0 ? "ESGOTADO": "DISPONÍVEL"}}</td>
           <td>R$ {{ $p->valor * $saldo}}</td>
           <td><a href="/Produtos/mostrar/{{ $p->id_produto }}"><span class="glyphicon glyphicon-pencil"></span></a></td>
           <td><a href="/Produtos/remove/{{ $p->id_produto }}"><span class="glyphicon glyphicon-trash"></span></a></td>

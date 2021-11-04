@@ -75,7 +75,13 @@
                                 <button type="submit" class="btn btn-primary">
                                     Entrar no Sistema
                                 </button>
-
+                                
+                                <!-- Link para cadastrar usuario no sistema -->
+                                {{-- 
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        Esqueceu sua senha?
+                                    </a>
+                                --}}
                                 <!-- <a class="btn btn-link" href="#">Esqueceu sua senha?</a> -->
                             </div>
                         </div>

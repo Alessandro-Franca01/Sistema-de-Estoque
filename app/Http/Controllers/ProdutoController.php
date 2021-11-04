@@ -20,8 +20,8 @@ class ProdutoController extends Controller
                             inner join produtos on produtos.id_produto = saidas.fk_produto
                             group by produtos.id_produto) as temp'), 'temp.id_produto', '=', 'produtos.id_produto')
         ->join('categorias', 'categorias.id_categoria', '=', 'produtos.fk_categoria')
-        ->select('produtos.id_produto','produtos.codigo_produto','produtos.descricao', 'produtos.valor',DB::raw('sum(entradas.quantidade) as quantidadeEntrada'),'temp.quantidadeSaida','categorias.nome','produtos.path_image as imagens')
-        ->groupBy('produtos.descricao','produtos.codigo_produto','produtos.valor','produtos.id_produto','categorias.nome','produtos.path_image','temp.quantidadeSaida')
+        ->select('produtos.id_produto','produtos.codigo_produto','produtos.descricao', 'produtos.tamanho', 'produtos.valor',DB::raw('sum(entradas.quantidade) as quantidadeEntrada'),'temp.quantidadeSaida','categorias.nome','produtos.path_image as imagens')
+        ->groupBy('produtos.descricao','produtos.codigo_produto','produtos.valor','produtos.id_produto','produtos.tamanho','categorias.nome','produtos.path_image','temp.quantidadeSaida')
         ->getQuery() // Optional: downgrade to non-eloquent builder so we don't build invalid User objects.
         ->orderBy('produtos.id_produto','ASC')
         ->get();

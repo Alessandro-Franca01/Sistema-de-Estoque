@@ -24,11 +24,18 @@
 
     <!-- Text input-->
     <div class="form-group">
-        <label class="col-md-4 control-label" for="produto">Código/Nome do Produto</label>
+        <label class="col-md-4 control-label" for="produto">Código/Nome/Tamanho</label>
         <div class="col-md-4">
             <select id="categoria" name="fk_produto" class="form-control">
                 @foreach($produtos as $p)
-                    <option value="{{ $p->id_produto}}">{!! $p->codigo_produto !!} - {!! $p->descricao !!}</option>
+                    @php
+                        // Verificando, se o produto tem tamanho: 
+                        $tamanho = "N/A";
+                        if(!empty($p->tamanho)){
+                            $tamanho = $p->tamanho;
+                        }
+                    @endphp
+                    <option value="{{ $p->id_produto}}"> {!! $p->codigo_produto !!} - {!! $p->descricao !!} ({{ $tamanho }}) </option>
                 @endforeach
             </select>
         </div>
