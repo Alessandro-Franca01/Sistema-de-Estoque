@@ -6,17 +6,17 @@
         <div class="row">
             <fieldset>
                 <!-- Form Name -->
-                <legend>Cadastro de Venda
+                <legend>Cadastro de Retirada
                     <button type="button" class="btn btn-default btn-number">
                         <a href="{{action('ClienteController@novo')}}" target="_blank">
-                            <span class="glyphicon glyphicon-user">Cadastrar Cliente</span>
+                            <span class="glyphicon glyphicon-user"> Cadastrar-GzM</span>
                         </a>
                     </button>
                 </legend>
                 <!-- Text input-->
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="cliente">Nome da Cliente</label>
+                        <label class="col-md-4 control-label" for="cliente">Nome do(a) GM</label>
                         <div class="col-md-3">
                             <select id="nomeClientes" name="fk_cliente" class="form-control">
                                 @foreach($clientes as $c)

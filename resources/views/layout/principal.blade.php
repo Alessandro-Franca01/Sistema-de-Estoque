@@ -71,17 +71,17 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Vendas <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Retiradas <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ route('Listar Vendas') }}">Listar Vendas</a></li>
-                            <li><a href="{{ route('Cadastrar Venda') }}">Cadastrar Venda</a></li>
+                            <li><a href="{{ route('Listar Vendas') }}">Listar Retiradas</a></li>
+                            <li><a href="{{ route('Cadastrar Venda') }}">Cadastrar Retirada</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Clientes <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Guardas <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ route('Listar Clientes') }}">Listar Clientes</a></li>
-                            <li><a href="{{ route('Cadastrar Cliente') }}">Cadastrar Cliente</a></li>
+                            <li><a href="{{ route('Listar Clientes') }}">Listar Guardas</a></li>
+                            <li><a href="{{ route('Cadastrar Cliente') }}">Cadastrar Guarda</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

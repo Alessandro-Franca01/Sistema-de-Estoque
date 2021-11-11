@@ -37,8 +37,8 @@
       @foreach($produtos as $p)
         <tr>
           <td>{{ $p->codigo_produto }}</td>
-          <!-- No lugar de colocar uma String no caso de não haver foto, vou usar outra img  -->
-          <td id="imagem">{!! $p->imagens ? "<img width=\"150\" src=\"$p->imagens\">" : 'Sem Foto' !!}</td>
+          <!-- No caso de não houver foto, usar outra img (add attribute height)  -->
+          <td id="imagem">{!! $p->imagens ? "<img width=\"150\" height=\"150\" src=\"$p->imagens\">" : 'Sem Foto' !!}</td>
           <td>{{ $p->descricao }}</td>
           <!-- Arrumar isso aqui depois -->
           @empty($p->tamanho)
