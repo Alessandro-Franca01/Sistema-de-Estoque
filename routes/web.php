@@ -110,6 +110,9 @@ Route::group(['middleware' => 'auth'], function () {
 	//Categorias
 	Route::get('/ListarDestaque','DestaqueController@listar')->name('Listar Destaques');
 
+	//Exports Relatorios em Excel
+	Route::get('exports/test', 'RelatorioController@export')->name('relatorio.export');
+
 });
 
 

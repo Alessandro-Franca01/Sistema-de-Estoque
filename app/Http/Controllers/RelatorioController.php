@@ -7,13 +7,22 @@ use DB;
 use App\Categoria;
 use App\Produto;
 use App\Venda;
+
 use App\Http\Requests\RelatorioRequest;
+use App\Exports\ServiceExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class RelatorioController extends Controller
 {
     public function novo(){
     	return view('relatorio.formulario');
     }
+
+	// Metodo para expotar o arquivoem excel: FUNCIONANDO!
+	public function export()
+	{
+		return Excel::download(new ServiceExport, 'export_new.xlsx');
+	}
 
     public function mostra(RelatorioRequest $request){
 
