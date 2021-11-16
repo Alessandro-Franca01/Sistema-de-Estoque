@@ -18,9 +18,9 @@ class CriarTabelaFornecedor extends Migration
             $table->string('nome_loja');
             $table->string('celular');
             $table->string('email');
-            $table->string('endereco');
-            $table->string('ponto_referencia');
-            $table->string('observacao');
+            $table->text('endereco');
+            $table->text('ponto_referencia');
+            $table->text('observacao');
             $table->timestamps();
         });
     }

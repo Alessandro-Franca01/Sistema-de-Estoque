@@ -1,9 +1,9 @@
 @extends('layout.principal')
 @section('conteudo')
 <div class="container">
-  <h2>Clientes</h2>     
+  <h2>Guardas</h2>     
   <ul>
-      <li><a href="{{action('ClienteController@novo')}}">Cadastrar Cliente</a></li>
+      <li><a href="{{action('ClienteController@novo')}}">Cadastrar Guardas</a></li>
   </ul>  
   @if(session()->has('message.level'))
     <div class="alert alert-{{ session('message.level') }}"> 
@@ -15,13 +15,13 @@
     <thead>
       <tr>
         <th>#</th>
-        <th>Nome Cliente</th>
+        <th>Nome Guarda</th>
         <th>CPF</th>
         <th>Celular</th>
         <th>E-Mail</th>
         <th>Saídas</th>
-        <th>Editar Cliente</th>
-        <th>Remover Cliente</th>
+        <th>Editar Guarda</th>
+        <th>Remover Guarda</th>
       </tr>
     </thead>
     <tbody>

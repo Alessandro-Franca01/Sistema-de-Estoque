@@ -6,11 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CriarTabelaProdutos extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    // Ajustes: Add campo de Observação
     public function up()
     {
         Schema::create('produtos', function (Blueprint $table) {
@@ -21,6 +17,7 @@ class CriarTabelaProdutos extends Migration
             $table->integer('fk_categoria')->unsigned();
             $table->foreign('fk_categoria')->references('id_categoria')->on('categorias');
             $table->boolean('destaque');
+            $table->text('observacao');
             $table->timestamps();
         });
     }

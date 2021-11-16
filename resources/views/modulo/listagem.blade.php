@@ -5,10 +5,10 @@
   <div class="row">
     <div class="col-sm-6 col-md-3">
       <div class="thumbnail">
-        <h2 class="text-center">Venda</h2>
+        <h2 class="text-center">Retiradas</h2>
         <div class="caption">
-          <li class="list-group-item"><a href="{{ route('Cadastrar Venda') }}">Cadastrar Venda</a></li>
-          <li class="list-group-item"><a href="{{ route('Listar Vendas') }}">Listar Vendas</a></li>
+          <li class="list-group-item"><a href="{{ route('Cadastrar Venda') }}">Cadastrar Retirada</a></li>
+          <li class="list-group-item"><a href="{{ route('Listar Vendas') }}">Listar Retiradas</a></li>
         </div>
       </div>
     </div>    

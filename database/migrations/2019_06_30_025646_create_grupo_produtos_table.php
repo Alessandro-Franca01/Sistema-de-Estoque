@@ -16,6 +16,7 @@ class CreateGrupoProdutosTable extends Migration
         Schema::create('grupo_produtos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
+            $table->text('descricao');
             $table->integer('produto_id')->unsigned();
             $table->foreign('produto_id')->references('id_produto')->on('produtos');
             $table->timestamps();

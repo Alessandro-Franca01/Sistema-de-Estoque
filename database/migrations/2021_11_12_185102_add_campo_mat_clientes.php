@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CriarTabelaCategorias extends Migration
+class AddCampoMatClientes extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CriarTabelaCategorias extends Migration
      */
     public function up()
     {
-        Schema::create('categorias', function (Blueprint $table) {
-            $table->increments('id_categoria');
-            $table->string('nome');
-            $table->text('descricao');
-            $table->timestamps();
-          });
+        Schema::table('clientes', function(Blueprint $table){
+            $table->unsignedBigInteger('matricula')->unique();
+        });  
     }
 
     /**
@@ -28,6 +25,8 @@ class CriarTabelaCategorias extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categorias');
+        Schema::table('clientes', function (Blueprint $table) {
+            $table->dropColumn('matricula');
+        });
     }
 }

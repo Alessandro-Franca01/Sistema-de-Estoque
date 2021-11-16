@@ -56,6 +56,16 @@
         </div>
     </div>
 
+    <!-- Text Area-->
+    <div class="form-group">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <label class="col-md-4 control-label" for="textarea">Observação</label>  
+        <div class="col-md-4">
+            <textarea id="textarea" name="observacao" value="{{ old('observacao') }}" class="form-control input-md"> </textarea>
+            <small id="textarea" class="form-text text-muted">*Campo não obrigatório</small>                
+        </div>
+    </div>
+
     <!-- Button -->
     <div class="form-group">
         <label class="col-md-4 control-label" for="salvar"></label>

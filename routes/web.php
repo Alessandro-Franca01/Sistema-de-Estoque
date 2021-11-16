@@ -121,6 +121,11 @@ Auth::routes();
 $this->get('/', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('/entrar', 'Auth\LoginController@entrar')->name('entrar');
 
+// Testando envio de email: 
+Route::get('/test/mail', function () {
+    return null;
+});
+
 
 
 

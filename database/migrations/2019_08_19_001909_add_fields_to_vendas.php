@@ -14,7 +14,7 @@ class AddFieldsToVendas extends Migration
     public function up()
     {
         Schema::table('vendas', function (Blueprint $table) {
-            $table->enum('tipo_pagamento', ['Débito', 'Crédito', 'Dinheiro'])->nullable();
+            $table->enum('tipo_pagamento', ['Débito', 'Crédito', 'Dinheiro', 'Sem Pagamento'])->nullable();
             $table->boolean('troca')->nullable();
         });
     }

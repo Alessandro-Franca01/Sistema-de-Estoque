@@ -5,13 +5,15 @@
     <div class="row justify-content-md-center mt-5">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Register</div>
-                <div class="card-body">
+                <div class="card-header">
+                    Registrar Usuário
+                </div>
+                <div class="card-body mt-4">
                     <form role="form" method="POST" action="{{ url('/register') }}">
                         {!! csrf_field() !!}
-
+                        <br>
                         <div class="form-group row">
-                            <label class="col-lg-4 col-form-label text-lg-right">Name</label>
+                            <label class="col-lg-4 col-form-label text-lg-right">Nome</label>
 
                             <div class="col-lg-6">
                                 <input
@@ -28,9 +30,27 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label text-lg-right">Matricula</label>
+
+                            <div class="col-lg-6">
+                                <input
+                                        type="text"
+                                        class="form-control{{ $errors->has('matricula') ? ' is-invalid' : '' }}"
+                                        name="matricula"
+                                        value="{{ old('matricula') }}"
+                                        required
+                                >
+                                @if ($errors->has('matricula'))
+                                    <div class="invalid-feedback">
+                                        <strong>{{ $errors->first('matricula') }}</strong>
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group row">
-                            <label class="col-lg-4 col-form-label text-lg-right">E-Mail Address</label>
+                            <label class="col-lg-4 col-form-label text-lg-right">Email</label>
 
                             <div class="col-lg-6">
                                 <input
@@ -50,7 +70,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-lg-4 col-form-label text-lg-right">Password</label>
+                            <label class="col-lg-4 col-form-label text-lg-right">Senha</label>
 
                             <div class="col-lg-6">
                                 <input
@@ -68,7 +88,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-lg-4 col-form-label text-lg-right">Confirm Password</label>
+                            <label class="col-lg-4 col-form-label text-lg-right">Confirmar Senha</label>
 
                             <div class="col-lg-6">
                                 <input
@@ -88,7 +108,7 @@
                         <div class="form-group row">
                             <div class="col-lg-6 offset-lg-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Register
+                                    Registrar
                                 </button>
                             </div>
                         </div>

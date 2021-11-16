@@ -14,7 +14,7 @@ class AddCpfToUsuarios extends Migration
     public function up()
     {
         Schema::table('clientes', function (Blueprint $table) {
-            $table->string('cpf')->nullable();
+            $table->string('cpf', '11')->unique();
         });
     }
 

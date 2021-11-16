@@ -43,7 +43,7 @@
     <div class="form-group">
         <label class="col-md-4 control-label" for="textinput">Tamanho</label>  
         <div class="col-md-4">
-            <input id="textinputTamanho" name="tamanho" value="{{ old('tamanho') }}"  type="text" placeholder="Tamanho" class="form-control input-md" required>
+            <input id="textinputTamanho" name="tamanho" value="{{ old('tamanho') }}"  type="text" placeholder="Tamanho" class="form-control input-md">
         </div>
     </div>
 
@@ -86,6 +86,16 @@
         <label class="col-md-4 control-label" for="categoria">Inserir Foto</label>
         <div class="col-md-4">
             <input type='file' id="primaryImage" name="primaryImage" value="{{ old('primaryImage') }}" accept="image/*" />
+        </div>
+    </div>
+
+    <!-- Text Area-->
+    <div class="form-group">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <label class="col-md-4 control-label" for="textarea">Observação</label>  
+        <div class="col-md-4">
+            <textarea id="textarea" name="observacao" value="{{ old('observacao') }}" class="form-control input-md"> </textarea>
+            <small id="textarea" class="form-text text-muted">*Campo não obrigatório</small>                
         </div>
     </div>
 
