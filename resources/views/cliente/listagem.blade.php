@@ -17,6 +17,7 @@
         <th>#</th>
         <th>Nome Guarda</th>
         <th>CPF</th>
+        <th>Matricula</th>
         <th>Celular</th>
         <th>E-Mail</th>
         <th>Saídas</th>
@@ -30,6 +31,7 @@
           <td>{{ $c->id_clientes }}</td>
           <td>{{ $c->nome }}</td>
           <td>{{ $c->cpf }}</td>
+          <td>{{ $c->matricula }}</td>
           <td>{{ $c->celular }}</td>
           <td>{{ $c->email }}</td>
           <td><a href="/Listar/Compras/{{ $c->id_clientes }}"><span class="glyphicon glyphicon-th-list"></span></a></td>

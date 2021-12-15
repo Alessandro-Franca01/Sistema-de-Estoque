@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cliente extends Model
 {
-   	protected $fillable = ['nome','email','celular', 'cpf'];	
+   	protected $fillable = ['nome','email','celular', 'cpf', 'matricula'];	
 	protected $primaryKey = 'id_clientes';
 
 	// Implementando metodo para buscar cliente que fez a compra

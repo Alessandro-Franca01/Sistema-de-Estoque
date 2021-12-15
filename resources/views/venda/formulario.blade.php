@@ -76,6 +76,7 @@
                             <option value="1">Débito</option>
                             <option value="2">Crédito</option>
                             <option value="3">Dinheiro</option>
+                            <option value="4">Sem Pagamento</option>
                         </select>
                     </div>
                 </div>
@@ -106,7 +107,15 @@
                         <input id="total" name="total" value="{{ old('total') }}" type="text" class="form-control input-md" disabled>
                         <input id="valorVenda" name="valor_venda" type="hidden">
                     </div>
-                </div>        
+                </div>
+                <div class="form-group">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <label class="col-md-4 control-label" for="textarea">Observação</label>  
+                    <div class="col-md-4">
+                        <textarea id="textarea" name="observacao" value="{{ old('observacao') }}" class="form-control input-md"> </textarea>
+                        <small id="textarea" class="form-text text-muted">*Campo não obrigatório</small>                
+                    </div>
+                </div>      
             </fieldset>
 
             <!-- Button -->

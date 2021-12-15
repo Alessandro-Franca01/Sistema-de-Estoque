@@ -5,7 +5,7 @@
       <fieldset>
 
       <!-- Form Name -->
-      <legend>Cadastro de Cliente</legend>
+      <legend>Cadastro de GM</legend>
 
       <!-- Text input-->
         <div class="form-group">
@@ -19,6 +19,12 @@
             <label class="col-md-4 control-label" for="textinput">CPF</label>
             <div class="col-md-4">
                 <input id="textinput" name="cpf" value="{{ old('cpf') }}" type="text" placeholder="Insira o cpf" class="form-control input-md" required>  
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Matricula</label>
+            <div class="col-md-4">
+                <input id="textinput" name="matricula" value="{{ old('matricula') }}" type="text" placeholder="Insira a matricula" class="form-control input-md" required>  
             </div>
         </div>
         <div class="form-group">

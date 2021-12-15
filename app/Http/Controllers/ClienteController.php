@@ -46,7 +46,7 @@ class ClienteController extends Controller
 		Cliente::create($request->all());
 
         Request::session()->flash('message.level', 'success');
-        Request::session()->flash('message.content', 'Cliente Adicionada com Sucesso!');
+        Request::session()->flash('message.content', 'Guarda Adicionado(a) com Sucesso!');
 		
 		return redirect()->action('ClienteController@listar')->withInput(Request::only('nome'));
 	}

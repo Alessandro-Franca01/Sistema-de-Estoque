@@ -25,7 +25,7 @@ class ClienteRequest extends FormRequest
     {
         return [
            'nome' => 'required|max:100',
-           'celular' => 'required|max:100',
+           'celular' => 'required|max:20',
         ];
     }
 

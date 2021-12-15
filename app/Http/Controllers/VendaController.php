@@ -37,8 +37,17 @@ class VendaController extends Controller
 
         $request["created_at"] = date("Y-m-d H:i:s",strtotime($request["created_at"]));
 
-        $venda = Venda::create(['valor_venda' => $request["valor_venda"],'desconto' => $request["desconto"],'porcentagem' => $request["porcentagem"],'online' => $request["online"],'divulgacao' => $request["divulgacao"],
-            'fk_cliente' => $request["fk_cliente"], 'created_at' => $request["created_at"], 'tipo_pagamento' => $request["tipo_pagamento"]] );
+        $venda = Venda::create([
+            'valor_venda' => $request["valor_venda"],
+            'desconto' => $request["desconto"],
+            'porcentagem' => $request["porcentagem"],
+            'online' => $request["online"],
+            'divulgacao' => $request["divulgacao"],
+            'observacao' => $request["observacao"],
+            'fk_cliente' => $request["fk_cliente"],
+            'created_at' => $request["created_at"],
+            'tipo_pagamento' => $request["tipo_pagamento"]
+            ]);
 
         $insertedId = $venda->id_venda;
 
@@ -47,7 +56,7 @@ class VendaController extends Controller
         }
 
         Request::session()->flash('message.level', 'success');
-        Request::session()->flash('message.content', 'Venda Adicionada com Sucesso!');
+        Request::session()->flash('message.content', 'Retirada Adicionada com Sucesso!');
 		
 		return redirect()->action('VendaController@listarVenda')->withInput(Request::only('nome'));
 	}

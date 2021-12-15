@@ -28,7 +28,9 @@ class GrupoProdutoController extends Controller
     public function adiciona(GrupoProdutosRequest $request){
         $grupoProdutos = $request->all();
         foreach($grupoProdutos["produtos"] as $value){
-            GrupoProduto::create(['nome' => $grupoProdutos["nome"],
+            GrupoProduto::create([
+                                'nome' => $grupoProdutos["nome"],
+                                'descricao' => $grupoProdutos["descricao"],
                                   'produto_id' => $value]);
         }
         Request::session()->flash('message.level', 'success');
